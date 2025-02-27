@@ -1,0 +1,42 @@
+.table-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 200px;
+    border-width: 2px; /* Adjust border width as needed */
+    border-style: solid;
+    /* Apply gradient border */
+    border-image: linear-gradient(to right, #76eec6, #00bfff);
+    /* Ensure the gradient fills the border area */
+    border-image-slice: 1;
+      border-radius: 5px;
+  } 
+  h2{
+    color:  rgb(6, 69, 120);
+    text-align: center;
+    margin-top: 10px;
+  } 
+.mat-elevation-z8 {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .mat-elevation-z8 th,
+  .mat-elevation-z8 td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .mat-elevation-z8 th {
+    background-color: #f2f2f2;
+  }
+  
+  .mat-elevation-z8 tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .mat-elevation-z8 tr:hover {
+    background-color: #e6f7ff;
+  }
+  

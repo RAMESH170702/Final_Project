@@ -1,0 +1,15 @@
+.buy-button{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    background: linear-gradient(to right, #76eec6, #00bfff); /* Adjust colors as needed */
+    border: 1px solid black;
+    border-radius: 10px;
+    /* border-radius: 50%; */
+  }
+
+  .play-button .buy-text {
+    margin-left: 5px; /* Adjust margin as needed */
+    color: whitesmoke;
+    font-weight: bold;
+  }

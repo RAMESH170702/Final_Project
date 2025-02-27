@@ -1,0 +1,11 @@
+<div id="search">
+    <div class="input">
+        <mat-form-field appearance="fill" class="oval-form-field">
+            <mat-label>Search Movie By Title</mat-label>
+            <input matInput type="text" [(ngModel)] = "searchTitle" class="input">
+            <button mat-button matSuffix  matSuffixGap="10" class="search-button" mat-icon-button (click)="search()">
+                Search            
+            </button>
+        </mat-form-field>
+    </div>
+</div>

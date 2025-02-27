@@ -1,0 +1,83 @@
+.carousel-parent-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+.carousel-container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+    margin: 0 auto;
+}
+  
+.carousel-items {
+    display: flex;
+    /* overflow-x: hidden; */
+    transition: transform 1s ease-in-out;
+}
+  
+.carousel-card {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    margin-right: 30px;
+    max-width: 200px;
+}
+/* .show-carousel .carousel {
+    transform: translateX(calc(-100% * {{ currentIndex }}));
+} */
+  
+.carousel-card>img {
+    width: 100%;
+    height: auto;
+}
+  
+.nav-button {
+    position: absolute;
+    flex-shrink: 0;
+    /* margin: 0 5px; */
+    top: 50%;
+    transform: translateY(-50%); 
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    /* font-size: 25px; */
+}
+  
+/* .prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+  } */
+  
+  .prev {
+    /* left: 10px; */
+    left: 0;
+    /* right: calc(100% - 60px); */
+    /* margin-right: 50px; */
+  }
+  
+  .next {
+    right: 0;
+    /* left: calc(100% - 50px); */
+  }
+  
+  .prev[disabled], .next[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+.heading {
+    background-color:  rgb(3 37 65);
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}

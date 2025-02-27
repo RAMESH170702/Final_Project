@@ -1,0 +1,152 @@
+.movie-details {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
+  grid-template-rows: auto auto; /* Auto height for both rows */
+  gap: 20px; /* Gap between grid items */
+}
+
+.selected-movie {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  grid-row: 1;
+}
+
+.selected-movie .image {
+  position: relative;
+  margin-right: 20px;
+  width: 500px;
+  overflow: hidden;
+}
+
+.selected-movie .details {
+  flex: 1;
+  width: 60%;
+  margin-top: 50px;
+}
+
+.selected-movie .image img {
+  max-width: 500px;
+  height: auto;
+}
+
+.progress-container {
+  position: relative;
+  display: inline-block; /* Ensures that the progress value aligns properly */
+  margin-right: 20px;
+}
+
+.progress-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em; /* Adjust font size as needed */
+  font-weight: 550;
+}
+
+.genre {
+  display: flex;
+  align-items: center;  
+}
+
+.play-button{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  background: linear-gradient(to right, #76eec6, #00bfff); /* Adjust colors as needed */
+  border: 1px solid black;
+  border-radius: 10px;
+  /* border-radius: 50%; */
+}
+.play-button .text {
+  margin-left: 5px; /* Adjust margin as needed */
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.favorite-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  grid-row: 2;
+  position: relative;
+  margin-top: 20px;
+
+}
+
+.carousel-container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  grid-row: 3;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  margin-bottom: 5px;
+  
+}
+
+mat-card {
+  box-shadow: 5px 4px 5px rgb(1, 1, 31);
+  border-radius: 10px;
+}
+
+.carousel-card {
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  margin-right: 30px; /* Adjust spacing between cards */
+  width: 200px;
+}
+
+.carousel-card>img {
+  width: 100%; /* Adjust the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.nav-button {
+  border-radius: 50%;
+  padding:10px;
+  position: absolute;
+  flex-shrink: 0;
+  margin: 0 5px;
+  top: 50%;
+  transform: translateY(-50%); 
+  z-index: 1;
+}
+
+
+
+.prev {
+  right: calc(100% - 60px); /* Adjust position of previous button */
+}
+
+.next {
+  left: calc(100% - 50px); /* Adjust position of next button */
+}
+
+.heading {
+  background-color: rgb(3 37 65);
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px; 
+  /* width:60% */
+
+}

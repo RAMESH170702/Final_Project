@@ -1,0 +1,103 @@
+<div class="movie-details">
+  <!-- Selected Movie -->
+
+  <div class="selected-movie">    
+    <div class="image">
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + selectedMovie.backdrop_path" alt="{{ selectedMovie.title }}">
+      <button mat-icon-button class="favorite-button" aria-label="Add to Favorites" [class.blurred]="!isLoggedIn()" (click)="toggleFavorite()">
+        <mat-icon>{{ isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+      </button>
+    </div>
+    <div class="details">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ selectedMovie.title }} ({{year}})</mat-card-title>
+          <mat-card-subtitle>{{ selectedMovie.tagline }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="genre">
+            <div class="progress-container">
+              <mat-progress-spinner
+                color= "primary"
+                mode = "determinate"
+                diameter ="70"
+                [value] = movie_average>
+              </mat-progress-spinner>
+              <span class="progress-value">{{ movie_average }}%</span>
+            </div>
+            
+            <mat-chip-set>
+              <mat-chip disableRipple *ngFor="let genre of genres">
+                {{genre.name}}
+              </mat-chip>
+            </mat-chip-set>
+            <ng-container *ngIf="movieOwned === true">
+              <button class="play-button" aria-label="Play Trailer" routerLink="/movie/{{selectedMovie.id}}/play">
+                <mat-icon>play_arrow</mat-icon>
+                <span class="text">Play Trailer</span>
+              </button>
+            </ng-container>
+            <ng-container *ngIf="movieOwned === false">
+              <app-payment (moviePurchased)="isMoviePurchased($event)" [movieId]="selectedMovie.id" ></app-payment>
+            </ng-container>       
+        </div>
+          <h3>Overview</h3> 
+          <p>{{ selectedMovie.overview }}</p>
+          <!-- <p *ngFor="let card of cast">{{card.known_for_de}}</p> -->
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="carousel-container">
+    <div class = "heading">
+      <h2 [ngStyle]="{
+        'background': 'linear-gradient(to right, #76eec6, #00bfff)',
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent'
+      }">Top Billed Actors</h2>
+    </div>
+    <button mat-icon-button class="nav-button prev" [disabled]="currentIndex === 0" (click)="previous()">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    
+    <div class="carousel-items" [style.transform]="'translateX(' + (- 230 * currentIndex) + 'px)'">
+      <mat-card class="carousel-card" *ngFor="let card of cast">
+        <img [src] = "'https://image.tmdb.org/t/p/w500/' + card.profile_path" alt="{{card.name}}">
+        <mat-card-content>
+          <h3>{{ card.name }}</h3>
+          <p>{{ card.character }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    
+    <button mat-icon-button class="nav-button next" [disabled]="currentIndex === cast.length - visibleCards" (click)="next()">
+      <!-- <button mat-icon-button class="nav-button next" [disabled]="!hasNext()" (click)="next()"> -->
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+
+
+
+  <!-- Recommended Movies Carousel -->
+
+  <div class="carousel-container1">
+    <div class = "heading">
+      <h2 [ngStyle]="{
+        'background': 'linear-gradient(to right, #76eec6, #00bfff)',
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent'
+      }">Recommendations</h2>
+    </div>
+    <button mat-icon-button class="nav-button prev" [disabled]="currentIndexRecommended === 0" (click)="previousRecommended()">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+
+    <div class="carousel-items" [style.transform]="'translateX(' + (-cardWidth * currentIndexRecommended) + 'px)'">
+      <mat-card class="carousel-card" *ngFor="let movie of recommendedMovies">
+          <img mat-card-image [routerLink]="['/movie', movie.id]" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+        </mat-card>
+  </div>
+  <button mat-icon-button class="nav-button next" [disabled]="currentIndexRecommended === recommendedMovies.length - visibleCards" (click)="nextRecommended()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>

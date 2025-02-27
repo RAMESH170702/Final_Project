@@ -1,0 +1,50 @@
+#search {
+    display: flex;
+    justify-content: center; /* Center align the content horizontally */
+    width: 60%; /*Occupies 60% of the screen width*/
+    margin: 0 auto; /* Center align the container */
+    margin-top: 20px;
+    align-content: center;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+  }
+  
+  .input {
+    flex: 1; /* Take up remaining space */
+    margin-right: 0px; /* Add some space between input and button */
+    /* width: 100%; */
+  }
+
+  .input mat-form-field {
+    width: 100%; 
+    /* width: 300px; */
+    /* height: 50px; */
+    border-radius: 25px;    
+    /* overflow: hidden; */
+    /* position: relative; */
+    /* border: 1px solid; */
+  }
+
+ 
+  
+  /* .button {
+    flex: 0 0 auto;
+    color: rgb(3 37 65);
+    border-radius: 30%;
+    margin-top: 20px;
+ 
+  } */
+  .search-button {
+    /* background-color:  rgb(3 37 65);  */
+    /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
+    /* background: linear-gradient(to right, #7fffd4, #00ced1); */
+    background: linear-gradient(to right, #76eec6, #00bfff); /* Adjust colors as needed */
+
+    color: #ffffff; /* Change to the text color you want */
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    padding: 12px 24px;
+    border-radius: 9999px;
+  }
+  .gradient-chip {
+    background: linear-gradient(to right, #76eec6, #00bfff);
+    color: white; /* Set the text color to contrast with the gradient background */
+  }

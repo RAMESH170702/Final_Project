@@ -1,0 +1,31 @@
+<app-search (searchMovie)="onSearch($event)"></app-search>
+<mat-chip-listbox>
+  <mat-chip-option class= "custom-chip" *ngFor="let genre of genres" (selectionChange)="fetchMoviesByGenre($event)" [ngStyle]="getChipStyle()" >{{ genre.name }}</mat-chip-option>
+</mat-chip-listbox>
+
+<div *ngIf="isLoggedIn()">
+  <app-favorite></app-favorite>
+</div>
+
+<div class="container">
+  <div class = "heading">
+    <h2 [ngStyle]="{
+      'background': 'linear-gradient(to right, #76eec6, #00bfff)',
+      '-webkit-background-clip': 'text',
+      '-webkit-text-fill-color': 'transparent'
+    }">Top-Rated Movies</h2>
+  </div>
+  <div class="all-movies">    
+    <mat-card *ngFor="let movie of movies">
+      <!-- <mat-card-header>
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+        <mat-card-subtitle>{{ movie.genre }}</mat-card-subtitle>
+      </mat-card-header> -->
+      <img class="movie-img" mat-card-image [routerLink] ="['/movie', movie.id]" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+    </mat-card>
+  </div>
+  <div class="next-prev-buttons">
+    <button mat-button disableRipple="false" (click)="previousPage()" [disabled]="pageNo === 1">Previous</button>
+    <button mat-button disableRipple="false" (click)="nextPage()">Next</button>
+  </div>
+</div>  

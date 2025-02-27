@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(3 37 65);
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    color: white;
+    font-size: x-large;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .right {
+    display: flex;
+    
+  }
+  
+  .logo img{
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  
+  .name {
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .custom-icon {
+    background-color: rgb(3, 37, 65);
+    color: rgb(24, 179, 179); /* Optional: Change icon color to white */
+    margin-left: 10px;
+    border: none;
+  }
+  

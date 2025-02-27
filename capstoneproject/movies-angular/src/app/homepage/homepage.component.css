@@ -1,0 +1,108 @@
+ .container {
+  /* max-width: 800px; */
+  margin: 0 auto;
+  margin-top: 30px;
+  /* padding: 20px; */
+  
+}
+.container h2 {
+  /* display: flex; */
+  text-align: center;
+  /* align-items: center; */
+}
+.heading {
+  background-color: rgb(3 37 65);
+  /* width:60% */
+
+}
+/* h2{
+  color: linear-gradient(to right, #76eec6, #00bfff);
+  
+} */
+
+.all-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+mat-card {
+  margin-top: 37px;
+  margin-left: 37px;
+  margin-right: 37px;
+  box-shadow: 10px 4px 8px rgb(1, 1, 31);
+  border-radius: 10px;
+  position: relative;
+}
+.custom-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent; /* Adjust background color and opacity as needed */
+}
+
+.movie-cards {
+  width: 300px;
+}
+
+.movie-card {
+  /* width: calc(25% - 20px); 25% width for each card with 20px margin */
+  margin: 10px;
+}
+
+.mat-card-content {
+  padding: 10px;
+  text-align: left;
+}
+
+.movie-img {
+  width: 250px; /* Make the image fill the entire width of the card */
+  height: 400px; /* Maintain the aspect ratio of the image */
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+mat-chip-listbox {
+  display: flex;
+  justify-content: space-around;
+}
+
+.next-prev-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.next-prev-buttons > button {
+  margin-right: 10px;
+  width: 80px;
+  text-align: center;
+  border-radius: 20px;
+  /* padding: 24px 48px; */
+  background: linear-gradient(to right, #76eec6, #00bfff);
+  /* color : black; */
+  border: 2px solid black;
+  padding: 10px;
+}
+/* .mat-chip {
+  font-size: 14px; 
+  padding: 8px 12px; 
+} */
+/* .custom-chip {
+  font-size: 14px; 
+  padding: 8px 12px;
+} */

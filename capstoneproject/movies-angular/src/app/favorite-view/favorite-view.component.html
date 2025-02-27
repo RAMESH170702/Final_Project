@@ -1,0 +1,14 @@
+<div class="fav-container">
+    <div class = "heading">
+      <h2 [ngStyle]="{
+        'background': 'linear-gradient(to right, #76eec6, #00bfff)',
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent'
+      }">My Favorites</h2>
+    </div>
+    <div class="fav-movies">    
+      <mat-card *ngFor="let movie of movies">
+        <img class="movie-img" mat-card-image [routerLink] ="['/movie', movie.id]" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+      </mat-card>
+    </div>
+  </div>  

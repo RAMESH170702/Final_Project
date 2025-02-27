@@ -1,0 +1,39 @@
+<div class = "heading" *ngIf="movies.length > 0">
+  <h2 [ngStyle]="{
+    'background': 'linear-gradient(to right, #76eec6, #00bfff)',
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent'
+  }"><a routerLink="favorites">My Favorites</a></h2>
+</div>
+<div class="carousel-parent-container">
+  <button mat-icon-button class="nav-button prev"  (click)="scroll('prev')" [disabled]="isPrevDisabled()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+
+
+  <div class="carousel-container1" [ngClass]="{'show-carousel': movies.length > 3}">
+    <div class="carousel-items" [ngStyle]="{'transform': carouselTransform}">
+      <mat-card class="carousel-card" *ngFor="let movie of movies">
+          
+          <img mat-card-image [routerLink]="['/movie', movie.id]" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+        </mat-card>
+    </div>
+  </div>
+  <button mat-icon-button class="nav-button next" (click)="scroll('next')" [disabled]="isNextDisabled()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>  
+</div>
+<!-- <div class="carousel-container1">
+  <button mat-icon-button class="nav-button prev" [disabled]="currentIndex === 0" (click)="previousRecommended()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+
+  <div class="carousel-items" [style.transform]="'translateX(' + (-cardWidth * currentIndex) + 'px)'">
+    <mat-card class="carousel-card" *ngFor="let movie of movies">
+        <img mat-card-image [routerLink]="['/movie', movie.id]" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+      </mat-card>
+</div>
+<button mat-icon-button class="nav-button next" [disabled]="currentIndex === movies.length - visibleCards" (click)="nextRecommended()">
+  <mat-icon>keyboard_arrow_right</mat-icon>
+</button>
+</div> -->
